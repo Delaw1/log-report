@@ -1,0 +1,95 @@
+{
+    "id": "7faccb07-250d-4014-a3ce-8a416cd64675",
+    "task_name": "dynamo/log-report",
+    "trial_name": "log-report 2__wq7Vnf3",
+    "trial_uri": "file:///Users/Lawrence/Downloads/log-report%202/jobs/2026-07-22__00-18-09/log-report%202__wq7Vnf3",
+    "task_id": {
+        "path": "."
+    },
+    "source": null,
+    "task_checksum": "89270fbc82b01a07f5485c6ae5addd14bdebd00420a8be067b14a6a89a45dec0",
+    "config": {
+        "task": {
+            "path": ".",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "log-report 2__wq7Vnf3",
+        "trials_dir": "jobs/2026-07-22__00-18-09",
+        "install_only": false,
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "oracle",
+            "import_path": null,
+            "model_name": null,
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "resume_trajectory": false,
+            "load_trajectory": null,
+            "extra_allowed_hosts": [],
+            "kwargs": {},
+            "mcp_servers": []
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": null,
+            "extra_docker_compose": [],
+            "kwargs": {},
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "extra_instruction_paths": [],
+        "job_id": "7189d042-0d7b-4891-a0ff-abf172bd9f8e"
+    },
+    "agent_info": {
+        "name": "oracle",
+        "version": "1.0.0",
+        "model_info": null
+    },
+    "agent_result": null,
+    "verifier_result": null,
+    "exception_info": {
+        "exception_type": "RuntimeError",
+        "exception_message": "Docker compose command failed for environment log-report. Command: docker compose --project-name log-report-2__wq7vnf3__env --project-directory /Users/Lawrence/Downloads/log-report 2/environment -f /private/var/folders/vr/ftxzlmqn6k5_rkqpr88sg7wh0000gn/T/tmptp1tvlow/log-report 2__wq7Vnf3__env-docker-compose-resources.json -f /Users/Lawrence/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/environments/docker/docker-compose-build.yaml -f /private/var/folders/vr/ftxzlmqn6k5_rkqpr88sg7wh0000gn/T/tmpcnk0y5xm/docker-compose-environment.json -f /private/var/folders/vr/ftxzlmqn6k5_rkqpr88sg7wh0000gn/T/tmpxb3dhfow/docker-compose-mounts.json build. Return code: 1. Stdout:  Image log-report-2__wq7vnf3__env-main Building \n#1 [internal] load local bake definitions\n#1 reading from stdin 582B done\n#1 DONE 0.0s\n\n#2 [internal] load build definition from Dockerfile\n#2 transferring dockerfile: 883B done\n#2 WARN: InvalidDefaultArgInFrom: Default value for ARG public.ecr.aws/docker/library/python:3.13-slim-bookworm@sha256:<digest-from-allowlist> results in empty or invalid base image name (line 12)\n#2 DONE 0.0s\nDockerfile:12\n\n--------------------\n\n  10 |     \n\n  11 |     \n\n  12 | >>> FROM public.ecr.aws/docker/library/python:3.13-slim-bookworm@sha256:<digest-from-allowlist>\n\n  13 |     \n\n  14 |     # Don't pin apt versions; update before install; clean lists in the same layer.\n\n--------------------\n\nfailed to solve: failed to parse stage name \"public.ecr.aws/docker/library/python:3.13-slim-bookworm@sha256:<digest-from-allowlist>\": invalid reference format\n\n\n\nView build details: docker-desktop://dashboard/build/default/default/koj82sj3k3na6cnty924cn4wo\n\n. Stderr: None. ",
+        "exception_traceback": "Traceback (most recent call last):\n  File \"/Users/Lawrence/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/trial/trial.py\", line 351, in run\n    await self._prepare()\n  File \"/Users/Lawrence/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/trial/trial.py\", line 385, in _prepare\n    await self._setup_agent_environment()\n  File \"/Users/Lawrence/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/trial/trial.py\", line 1148, in _setup_agent_environment\n    await self._start_agent_environment()\n  File \"/Users/Lawrence/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/trial/trial.py\", line 1154, in _start_agent_environment\n    await asyncio.wait_for(\n    ...<4 lines>...\n    )\n  File \"/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/tasks.py\", line 488, in wait_for\n    return await fut\n           ^^^^^^^^^\n  File \"/Users/Lawrence/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/environments/docker/docker.py\", line 891, in start\n    await self._run_docker_compose_command([\"build\"])\n  File \"/Users/Lawrence/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/environments/docker/docker.py\", line 656, in _run_docker_compose_command\n    raise RuntimeError(\n    ...<5 lines>...\n    )\nRuntimeError: Docker compose command failed for environment log-report. Command: docker compose --project-name log-report-2__wq7vnf3__env --project-directory /Users/Lawrence/Downloads/log-report 2/environment -f /private/var/folders/vr/ftxzlmqn6k5_rkqpr88sg7wh0000gn/T/tmptp1tvlow/log-report 2__wq7Vnf3__env-docker-compose-resources.json -f /Users/Lawrence/.local/share/uv/tools/harbor/lib/python3.14/site-packages/harbor/environments/docker/docker-compose-build.yaml -f /private/var/folders/vr/ftxzlmqn6k5_rkqpr88sg7wh0000gn/T/tmpcnk0y5xm/docker-compose-environment.json -f /private/var/folders/vr/ftxzlmqn6k5_rkqpr88sg7wh0000gn/T/tmpxb3dhfow/docker-compose-mounts.json build. Return code: 1. Stdout:  Image log-report-2__wq7vnf3__env-main Building \n#1 [internal] load local bake definitions\n#1 reading from stdin 582B done\n#1 DONE 0.0s\n\n#2 [internal] load build definition from Dockerfile\n#2 transferring dockerfile: 883B done\n#2 WARN: InvalidDefaultArgInFrom: Default value for ARG public.ecr.aws/docker/library/python:3.13-slim-bookworm@sha256:<digest-from-allowlist> results in empty or invalid base image name (line 12)\n#2 DONE 0.0s\nDockerfile:12\n\n--------------------\n\n  10 |     \n\n  11 |     \n\n  12 | >>> FROM public.ecr.aws/docker/library/python:3.13-slim-bookworm@sha256:<digest-from-allowlist>\n\n  13 |     \n\n  14 |     # Don't pin apt versions; update before install; clean lists in the same layer.\n\n--------------------\n\nfailed to solve: failed to parse stage name \"public.ecr.aws/docker/library/python:3.13-slim-bookworm@sha256:<digest-from-allowlist>\": invalid reference format\n\n\n\nView build details: docker-desktop://dashboard/build/default/default/koj82sj3k3na6cnty924cn4wo\n\n. Stderr: None. \n",
+        "occurred_at": "2026-07-22T00:18:11.070952"
+    },
+    "started_at": "2026-07-22T05:18:10.590735Z",
+    "finished_at": "2026-07-22T05:18:11.558064Z",
+    "environment_setup": {
+        "started_at": "2026-07-22T05:18:10.642665Z",
+        "finished_at": "2026-07-22T05:18:11.068626Z"
+    },
+    "agent_setup": null,
+    "agent_execution": null,
+    "verifier": null,
+    "step_results": null
+}
